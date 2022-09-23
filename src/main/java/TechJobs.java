@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
 /**
  * Created by LaunchCode
  */
@@ -77,7 +78,7 @@ public class TechJobs {
         Boolean validChoice = false;
         String[] choiceKeys = new String[choices.size()];
 
-        // Put the choices in an ordered structure so we can
+        // Put the choices in an ordered structure, so we can
         // associate an integer with each one
         int i = 0;
         for (String choiceKey : choices.keySet()) {
@@ -119,7 +120,17 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        for (HashMap<String, String> aJob : someJobs){
+            System.out.println("\n*****");
+            for (Map.Entry<String, String> entry : aJob.entrySet()){
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+            System.out.println("*****");
+        }
+            //System.out.println(someJobs.get(i));
 
-        System.out.println("printJobs is not implemented yet");
+        //System.out.println(someJobs);
+        //System.out.println("printJobs is not implemented yet");
+
     }
 }
