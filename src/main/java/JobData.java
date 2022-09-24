@@ -34,8 +34,9 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
             // .get(field) uses the string passed in to find if it is in the ArrayList (field = category searched through)
             String aValue = row.get(field);
+            String aCaseValue = aValue.toLowerCase();
             // if we find a matching value, we add it to the values ArrayList created earlier
-            if (!values.contains(aValue)) {
+            if (!values.contains(aCaseValue)) {
                 values.add(aValue);
             }
         }
@@ -77,8 +78,9 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
             // uses column as index, search only through that column
             String aValue = row.get(column);
+            String aCaseValue = aValue.toLowerCase();
 
-            if (aValue.contains(value)) {
+            if (aCaseValue.contains(value)) {
                 jobs.add(row);
             }
         }
@@ -101,11 +103,13 @@ public class JobData {
 
         // iterate through ArrayList
         for (HashMap<String, String> row : allJobs) {
-            //System.out.println(someJob);
+            //use .keySet to see the keys of the HashMap
             for (String jobDescription : row.keySet()) {
-                //System.out.println(jobDescription); prints out allll the HashMaps
+                //assign the current value to aValue and compare to the search value
                 String aValue = row.get(jobDescription);
-                if (aValue.contains(value)) {
+                String aCaseValue = aValue.toLowerCase();
+
+                if (aCaseValue.contains(value)) {
                     jobsByValue.add(row);
                 }
             }
