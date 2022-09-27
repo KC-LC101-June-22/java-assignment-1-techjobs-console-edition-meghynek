@@ -34,9 +34,9 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
             // .get(field) uses the string passed in to find if it is in the ArrayList (field = category searched through)
             String aValue = row.get(field);
-            String aCaseValue = aValue.toLowerCase();
+            //String aCaseValue = aValue.toLowerCase();
             // if we find a matching value, we add it to the values ArrayList created earlier
-            if (!values.contains(aCaseValue)) {
+            if (!values.contains(aValue)) {
                 values.add(aValue);
             }
         }
@@ -111,6 +111,7 @@ public class JobData {
 
                 if (aCaseValue.contains(value)) {
                     jobsByValue.add(row);
+                    break;
                 }
             }
         }
